@@ -11,6 +11,11 @@
 						"internalType": "string",
 						"name": "question",
 						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "imgUrl",
+						"type": "string"
 					}
 				],
 				"name": "createPoll",
@@ -38,6 +43,11 @@
 								"internalType": "uint256",
 								"name": "noCount",
 								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "imgUrl",
+								"type": "string"
 							}
 						],
 						"internalType": "struct Voting.pollsListObj[]",
@@ -104,6 +114,11 @@
 						"internalType": "string",
 						"name": "question",
 						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "imgUrl",
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -156,11 +171,11 @@
 	},
 	"sources": {
 		"contracts/vote.sol": {
-			"keccak256": "0xa1d184d39e0aecdce907e07f1514964b2b7b3367fae62b2e3811e65c5a7cddb3",
+			"keccak256": "0x28649baa301aa63569d5a5262f3b1c9188a6c615624a1b77291bcda43a3c6a1c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6ec81847565ccfb00bba3a432461d889f1bbc7a69a807476641dc55cb2a4113a",
-				"dweb:/ipfs/QmT1M3jEMmqJBr4UUoJQyZ5HXmnRaZJLA49dpRrtJDgNPK"
+				"bzz-raw://f458dbf79a7aa0bc295c674730665aa03eb4e4fdcf6a4ce320dd3c0565e2cefa",
+				"dweb:/ipfs/QmXth1xjP6DJx4dPX3FvMKDb7QzYxFkpm5vxT3TYd3LTHF"
 			]
 		}
 	},

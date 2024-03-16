@@ -6,9 +6,9 @@ contract Voting {
         address voter;
         bool choice;
     }
-
     struct Poll {
         string question;
+        string imgUrl;
         Vote[] votes;
         mapping(address => bool) hasVoted;
     }
@@ -16,22 +16,22 @@ contract Voting {
         string name;
         uint256 yesCount;
         uint256 noCount;
+        string imgUrl;
     }
 
     Poll[] public polls;
 
-    function createPoll(string memory question) public {
+    function createPoll(string memory question,string memory imgUrl) public {
         // 直接创建新的投票，映射`hasVoted`会自动初始化为空
         Poll storage newPoll = polls.push();
         newPoll.question = question;
+        newPoll.imgUrl = imgUrl;
     }
 
     function vote(uint256 pollIndex, bool choice) public {
         Poll storage poll = polls[pollIndex];
         require(!poll.hasVoted[msg.sender], "You have already voted.");
-
         Vote memory newVote = Vote({voter: msg.sender, choice: choice});
-
         poll.votes.push(newVote);
         poll.hasVoted[msg.sender] = true;
     }
@@ -76,7 +76,8 @@ contract Voting {
             pollsList[currentIndex] = pollsListObj({
                 name: polls[currentIndex].question,
                 yesCount: yesCount,
-                noCount: noCount
+                noCount: noCount,
+                imgUrl:polls[currentIndex].imgUrl
             });
         }
         return pollsList;
